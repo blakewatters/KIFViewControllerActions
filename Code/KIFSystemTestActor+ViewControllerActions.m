@@ -92,9 +92,8 @@ static Class defaultToolbarClass;
         if (configurationBlock) configurationBlock(storyboardViewController);
         KIFTestCondition(storyboardViewController != nil, error, @"Expected a view controller, but got nil");
 
-        UIViewController *viewController = [[UIViewController alloc] initWithNibName:nil bundle:nil];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:self.defaultNavigationBarClass toolbarClass:self.defaultToolbarClass];
-        navigationController.viewControllers = @[ viewController ];
+        navigationController.viewControllers = @[ storyboardViewController ];
         [UIApplication sharedApplication].keyWindow.rootViewController = navigationController;
 
         return KIFTestStepResultSuccess;
