@@ -83,4 +83,14 @@
  */
 - (void)presentModalViewControllerWithIdentifier:(NSString *)controllerIdentifier fromStoryboardWithName:(NSString *)storyboardName configurationBlock:(void (^)(UIViewController *viewController))configurationBlock;
 
+
+/*!
+ @abstract Modally presents a given navigation controller on top of the currently presented view controller
+ @param navigationController The `UINavigationController` object you wish to present
+ @param configurationBlock An optional configuration block which is invoked with the navigation controller
+ before it is presented.
+ @result A configured test step.
+ */
+- (void)presentModalViewController:(UINavigationController *)navigationController configurationBlock:(void (^)(UINavigationController *navigationController))configurationBlock;
+
 @end
