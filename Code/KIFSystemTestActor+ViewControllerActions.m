@@ -108,7 +108,7 @@ static Class defaultToolbarClass;
         KIFTestCondition(navigationControllerToPresent != nil, error, @"Expected a navigationController, but got nil");
         
         if (configurationBlock) configurationBlock(navigationControllerToPresent);
-        [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController presentViewController:navigationControllerToPresent animated:true completion:nil]
+        [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController presentViewController:navigationControllerToPresent animated:true completion:nil];
         
         return KIFTestStepResultSuccess;
     }];
