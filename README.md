@@ -17,6 +17,30 @@ There are only a handful of properties and methods in the library. Each action i
 1. `defaultNavigationBarClass` - Specifies a `UINavigationBar` subclass to be used when instantiating view controllers.
 1. `defaultToolbarClass` - Specifies a `UIToolbar` subclass to be used when instantiating view controllers.
 
+## Example Usage
+
+You can access the `KIFSystemTestActor` using the `system` property on `KIFTestCase`, e.g.
+
+```
+@interface MyViewControllerUITests : KIFTestCase
+
+...
+
+- (void)test
+{
+    [system presentViewControllerWithIdentifier:@"MyViewController"     
+                         fromStoryboardWithName:@"MyStoryBoardName"     
+                             configurationBlock:^(UIViewController *viewController) {    
+        // Configure your view controller, e.g. by injecting mock data or a mock endpoint
+        MyViewController *myViewController = (MyViewController *)viewController;
+        ...
+    }];
+    
+    [tester waitForViewWithAccessibilityLabel:@"my accessibility label"];
+    [tester enterText:@"asdf" intoViewWithAccessibilityLabel:@"my accessibility label"];
+}
+```
+
 ## Contact
 
 Blake Watters
