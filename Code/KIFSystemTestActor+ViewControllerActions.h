@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#import "KIFSystemTestActor.h"
+#import <KIF/KIFSystemTestActor.h>
 
 /**
  The `ViewControllerActions` category provides system level actions for triggering the instantation and presentation of `UIViewController` objects from code or loaded from Storyboards. These actions support the use of KIF during TDD or as a functional testing tool.
