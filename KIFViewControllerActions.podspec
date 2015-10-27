@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KIFViewControllerActions"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Adds actions to KIF for presenting view controllers to aid in functional testing."
   s.homepage     = "https://github.com/blakewatters/KIFViewControllerActions"
   s.license      = { :type => 'Apache', :file => 'LICENSE'}
