@@ -13,5 +13,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Code/*.{h,m}'
 
   s.dependency 'KIF', '>= 2.0.0'
-
 end
