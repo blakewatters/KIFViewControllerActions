@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '5.0'
   s.requires_arc = true
-  
+  s.frameworks  = 'XCTest'
   s.source       = { :git => "https://github.com/blakewatters/KIFViewControllerActions.git", :tag => s.version.to_s }
   s.source_files = 'Code/*.{h,m}'
 
