@@ -52,7 +52,7 @@ static Class defaultToolbarClass;
                     configurationBlock:(void (^)(id viewController))configurationBlock;
 {
     [self runBlock:^KIFTestStepResult(NSError **error) {
-        UIViewController *viewControllerToPresent = [viewControllerClass new];
+        UIViewController *viewControllerToPresent = [[viewControllerClass alloc] init];
         KIFTestCondition(viewControllerToPresent != nil, error, @"Expected a view controller, but got nil");
 
         Class navigationBarClassToUse = navigationBarClass ?: self.defaultNavigationBarClass;
@@ -106,10 +106,10 @@ static Class defaultToolbarClass;
     [self runBlock:^KIFTestStepResult(NSError **error) {
         UINavigationController *navigationControllerToPresent = navigationController;
         KIFTestCondition(navigationControllerToPresent != nil, error, @"Expected a navigationController, but got nil");
-        
+
         if (configurationBlock) configurationBlock(navigationControllerToPresent);
         [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController presentViewController:navigationControllerToPresent animated:true completion:nil];
-        
+
         return KIFTestStepResultSuccess;
     }];
 }
