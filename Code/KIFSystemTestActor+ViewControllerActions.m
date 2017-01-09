@@ -52,7 +52,7 @@ static Class defaultToolbarClass;
                     configurationBlock:(void (^)(id viewController))configurationBlock;
 {
     [self runBlock:^KIFTestStepResult(NSError **error) {
-        UIViewController *viewControllerToPresent = [viewControllerClass new];
+        UIViewController *viewControllerToPresent = [[viewControllerClass alloc] initWithNibName:nil bundle:nil];
         KIFTestCondition(viewControllerToPresent != nil, error, @"Expected a view controller, but got nil");
 
         Class navigationBarClassToUse = navigationBarClass ?: self.defaultNavigationBarClass;
